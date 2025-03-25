@@ -12,6 +12,7 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm install
+      - run: npm install eslint eslint-config-next --save-dev
       - run: npm run build
   test: 
     needs: build
@@ -23,6 +24,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      - run: npm install --save-dev eslint
       - run: npm install
+      - run: npm install eslint eslint-config-next --save-dev
       - run: npm test
